@@ -50,13 +50,10 @@ while True:
     if not is_war:
         game_rounds += 1
 
-    top_1 = cardp_1.pop(0)
-    top_2 = cardp_2.pop(0)
+    top_1, top_2 = cardp_1.pop(0), cardp_2.pop(0)
+    top_1_intval, top_2_intval = getCardIntValue(top_1), getCardIntValue(top_2)
 
-    c10 = getCardIntValue(top_1)
-    c20 = getCardIntValue(top_2)
-
-    if c10 == c20:  # war starts
+    if top_1_intval == top_2_intval:  # war starts
         cards_to_win_1 += [top_1] + cardp_1[:3]
         cards_to_win_2 += [top_1] + cardp_2[:3]
         cardp_1, cardp_2 = cardp_1[3:], cardp_2[3:]
@@ -66,19 +63,15 @@ while True:
             winner = 0
             break
         is_war = True
-    elif is_war == True:  # war ends
-        ctw = cards_to_win_1 + [top_1] + cards_to_win_2 + [top_2]
-        if c10 > c20:
-            cardp_1 += ctw
-        elif c10 < c20:
-            cardp_2 += ctw
-        cards_to_win_1, cards_to_win_2 = [], []
-        is_war = False
     else:  # regular battle
-        if c10 > c20:
-            cardp_1 += [top_1, top_2]
-        else:
-            cardp_2 += [top_1, top_2]
+        cards_to_win = cards_to_win_1 + [top_1] + cards_to_win_2 + [top_2]
+        if top_1_intval > top_2_intval:
+            cardp_1 += cards_to_win
+        elif top_1_intval < top_2_intval:
+            cardp_2 += cards_to_win
+        if is_war == True:  # war ends
+            cards_to_win_1, cards_to_win_2 = [], []
+            is_war = False
 
 if winner == 0:
     print('PAT')
