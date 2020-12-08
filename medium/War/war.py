@@ -27,7 +27,7 @@ def is_game_over(cardp_1, cardp_2):
 
 
 def getCardIntValue(card):
-    """ return card integer value (instead of J, Q, K, A """
+    """ return card integer value (instead of J, Q, K, A) """
     c0, _ = card[:-1], card[-1]
     if c0 == 'J':
         c0 = 11
