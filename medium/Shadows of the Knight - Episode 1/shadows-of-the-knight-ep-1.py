@@ -1,4 +1,4 @@
-# https://www.codingame.com/ide/puzzle/shadows-of-the-knight-episode-1
+# https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1
 
 dirs = {  # y, x
     'U': (-1, +0),
