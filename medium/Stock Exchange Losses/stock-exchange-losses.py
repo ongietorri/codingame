@@ -1,4 +1,4 @@
-# https://www.codingame.com/ide/puzzle/stock-exchange-losses
+# https://www.codingame.com/training/medium/stock-exchange-losses
 
 hi, low, v_prev = 0, 2**31, None
 max_drawdown = 0
