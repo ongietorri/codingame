@@ -1,3 +1,5 @@
+# https://www.codingame.com/training/medium/there-is-no-spoon-episode-1
+
 width = int(input())  # the number of cells on the X axis
 height = int(input())  # the number of cells on the Y axis
 
