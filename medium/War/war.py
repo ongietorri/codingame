@@ -1,4 +1,4 @@
-# https://www.codingame.com/ide/puzzle/winamax-battle
+# https://www.codingame.com/training/medium/winamax-battle
 
 cardp_1, cardp_2 = [], []
 n = int(input())  # the number of cards for player 1
